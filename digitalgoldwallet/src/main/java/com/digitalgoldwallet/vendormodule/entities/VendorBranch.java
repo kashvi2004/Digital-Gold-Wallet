@@ -1,5 +1,6 @@
 package com.digitalgoldwallet.vendormodule.entities;
 
+import com.digitalgoldwallet.paymentandtransactionmodule.entities.TransactionHistory;
 import com.digitalgoldwallet.usermodule.entities.Address;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.DecimalMin;
@@ -45,13 +46,13 @@ public class VendorBranch {
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
-//    @OneToMany(mappedBy = "branch")
-//    private List<TransactionHistory> transactions;
-//
-//    @OneToMany(mappedBy = "branch")
+    @OneToMany(mappedBy = "branch")
+    private List<TransactionHistory> transactions;
+
+    @OneToMany(mappedBy = "branch")
 //    private List<VirtualGoldHolding> holdings;
-//
-//    @OneToMany(mappedBy = "branch")
+
+    @OneToMany(mappedBy = "branch")
 //    private List<PhysicalGoldTransaction> physicalGoldTransactions;
 
     @PrePersist
